@@ -51,8 +51,9 @@ Mu would not be without the following opensource projects:
 
 ## What is Mu Architecture?
 
-## How does it work?
+Mu is built on top of kubernetes - an opensource cloud management platform.
 
+![diagram mu deployment](../images/leanmu.png "mu architecture")
 
 ## What Happens When You Deploy a Function?
 
@@ -75,34 +76,27 @@ You can invoke a function from:
 
 - The CLI.
 - An HTTP request invocation endpoint.
-- Based on time patterns
+- Based on a time pattern
 - From an event
 
 When a function is invoked for the first time, the platform:
 
-- identifies the Docker image of the function to pull from the Docker registry
-- execute the function by running the function's image as a container on an instance in a subnet associated with the
-  application to which the function belongs
+- Identifies the Docker image of the function to pull from the Docker registry
+- Execute the function by running the function's image as a container
 
-When the function is executing inside the container, the function can read from and write to other resources and
-services running in the same subnet (for example, Database as a Service). The function can also read from and write
-to other shared resources (for example, Object Storage), and other Oracle Cloud Services. You can specify the maximum
-length of  time the function is allowed to execute by setting a timeout in the  func.yaml file or in the Console.
+You can specify the maximum length of  time the function is allowed to execute by setting a timeout in the  func.yaml file or in the Console. Functions and platform logs are sent to Loki (an internal component) or forwarded to a syslog destination. When the function has finished executing and after a idle period, the Docker container is removed.
 
-Functions and platform logs are sent to Loki (an internal component) or forwarded to a syslog destination.
+If another call is triggered to the same function before the container is removed, the second request is routed to the same running container to optimize load time.
 
-When the function has finished executing and after a period being idle, the Docker container is removed.
-If another call is triggered to the same function before the container is removed, the second request is routed to
-the same running container to optimize load time.
-
-When multiple calls are triggered to the same function, the platform scales horizontally to serve incoming requests in
-parallel and starts additional containers to handle the load. 
+When multiple calls are triggered to the same function, the platform scales horizontally to serve incoming requests in parallel and starts additional containers to handle the load. 
 
 At any time, the platform keeps track of invocations and metrics for observability.
 
 ![diagram mu invocation](../images/mu_invocation.png "mu invocation")
 
-### How to run OLAP or long-running processes
+
+
+## How to run OLAP or long-running processes
 
 Mu provides 3 patterns to implement long running processes
 
@@ -111,6 +105,8 @@ Mu provides 3 patterns to implement long running processes
 - **Serverless batch compute** - is an upcoming feature that is not yet available.
 
 ## Mu vs Project Fn?
+
+Mu would not be without Project Fn. In alignment with the other components of the suite - Mu is a distribution of Project Fn which provides a complete  solution to run a production serverless functions cluster.
 
 ## Mu vs other OpenSource projects?
 
