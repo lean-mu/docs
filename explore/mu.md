@@ -27,29 +27,30 @@ There are multiple reasons you would consider your own on premise/cloud deployme
 
 ## Why did we create Mu?
 
-* Lack of proper FAAS offering in the open source space
+* Lack of proper FAAS offering in the open source space.
 * It appears Oracle is not investing on `Project Fn` anymore, or at least not making the changes public.
-* 
-* Any of the points from the previous question
+* Any of the points from the previous question.
 
 ## What products compose Mu?
 
-Mu is a serverless platform tailored with some of the best applications in their respective categories. The selection puts an effort in picking software that is particularly lean in terms of resource utilization without sacrificing features.
+Mu is a serverless platform tailored with some of the best applications in their respective categories. The selection puts an effort in picking software that are lean in terms of resource utilization without sacrificing features.
 
 Mu would not be without the following opensource projects:
 
-- **Oracle's Project Fn** - A excellent function serverless project based on docker. 
+- **Oracle's Project Fn** - A excellent function serverless project based on Docker. 
 - **Grafana Suite** - A de-facto standard in the observability space (Grafana, Prometheus, Loki, Tempo)
-- **TimberIO's Vector** - A centralized logging aggregator -  Another Gem which shines by its low resource utilisation, performance and features.
-- **Nats.io** - A gem for streaming and subscription management.
+- **Nats.io** - A gem: full featured subscription management platform which runs on <1MB of ram
+- **TimberIO's Vector** - A centralized logging aggregator -  Another gem which shines by its low resource utilisation, performance and features.
 - **Rancher K3S** - A full featured, lean distribution of Kubernetes.
 
 ### Tooling
 
-- Terraform
-- Helmsman
+The following tooling is used to provision the Mu platform.
 
-## What is Mu Architecture?
+- Terraform - an IaC product well tailored for infrastructure.
+- Helmsman - a superset of helm with bring software/component provisioning to the next level
+
+## What is the Mu Architecture?
 
 Mu is built on top of kubernetes - an opensource cloud management platform.
 
@@ -57,10 +58,9 @@ Mu is built on top of kubernetes - an opensource cloud management platform.
 
 ## What Happens When You Deploy a Function?
 
-When you have written the code for a function and it's ready to deploy,  you can use CLI commands to perform
-all the deployment operations in sequence: 
+When you have code for a function and it's ready to deploy,  you can use CLI commands to performal all the deployment operations, in sequence: 
 
-- building a Docker image from the function
+- building a Docker image from the function code using a based image template
 - providing a definition of the function in a func.yaml file that includes:
   - the maximum length of time the function is allowed to execute for 
   - the maximum amount of memory the function is allowed to consume 
@@ -93,8 +93,6 @@ When multiple calls are triggered to the same function, the platform scales hori
 At any time, the platform keeps track of invocations and metrics for observability.
 
 ![diagram mu invocation](../images/mu_invocation.png "mu invocation")
-
-
 
 ## How to run OLAP or long-running processes
 
