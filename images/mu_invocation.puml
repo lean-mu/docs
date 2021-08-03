@@ -1,0 +1,69 @@
+@startuml
+
+footer Mu by Olivier Refalo
+scale max 1024 width
+
+skinparam nodesep 10
+skinparam ranksep 10
+
+' Kubernetes
+!define KubernetesPuml https://raw.githubusercontent.com/dcasati/kubernetes-PlantUML/master/dist
+!includeurl KubernetesPuml/kubernetes_Common.puml
+!includeurl KubernetesPuml/kubernetes_C4.puml
+!includeurl KubernetesPuml/kubernetes_Context.puml
+!includeurl KubernetesPuml/kubernetes_Simplified.puml
+
+!includeurl KubernetesPuml/OSS/KubernetesSvc.puml
+!includeurl KubernetesPuml/OSS/KubernetesIng.puml
+!includeurl KubernetesPuml/OSS/KubernetesPod.puml
+!includeurl KubernetesPuml/OSS/KubernetesDeploy.puml
+!includeurl KubernetesPuml/OSS/KubernetesApi.puml
+
+
+!define AzurePuml https://raw.githubusercontent.com/RicardoNiepel/Azure-PlantUML/release/2-1/dist
+!includeurl AzurePuml/AzureCommon.puml
+!includeurl AzurePuml/AzureSimplified.puml
+
+!includeurl AzurePuml/Containers/AzureContainerRegistry.puml
+
+actor "HTTP" as http
+actor "CLI" as cli
+
+'top to bottom direction
+Left to right direction
+
+AzureContainerRegistry(dockerregistry, "Docker Registry", " ")
+
+' Kubernetes Components
+Cluster_Boundary(cluster, "Kubernetes Cluster") {
+    KubernetesIng(ingress, "fn.mu.local", "")
+    Namespace_Boundary(opsns, "mu-ops") {
+        KubernetesSvc(prometheus, "prometheus", "")
+        KubernetesSvc(loki, "loki", "")
+        KubernetesSvc(tempo, "tempo", "")
+        KubernetesPod(vector, "vector", "")
+        KubernetesPod(prometheus, "prometheus", "")
+    }
+    Namespace_Boundary(nsFn, "mu-fn") {
+        KubernetesSvc(lb, "lb", "")
+        KubernetesSvc(nats, "nats", "")
+        KubernetesPod(runner, "mu-runner", "")
+        KubernetesPod(worker, "nats-worker", "")
+        KubernetesPod(scheduler, "scheduler", "")
+    }
+}
+
+Rel(ingress, lb, " ")
+Rel(cli, ingress, "invokes")
+Rel(http, ingress, "invokes")
+Rel(scheduler, lb, "invokes")
+Rel(worker, lb, "invokes")
+Rel(lb, runner, "invokes")
+Rel(worker, nats, "listens")
+Rel_L(runner, dockerregistry, "pulls image")
+Rel(runner, prometheus, "metrics")
+Rel(runner, vector, "logs")
+Rel(vector, loki, " ")
+Rel(runner, tempo, "traces")
+
+@enduml

@@ -1,0 +1,61 @@
+@startuml
+
+footer Mu by Olivier Refalo
+scale max 1024 width
+
+skinparam nodesep 10
+skinparam ranksep 10
+
+' Kubernetes
+!define KubernetesPuml https://raw.githubusercontent.com/dcasati/kubernetes-PlantUML/master/dist
+!includeurl KubernetesPuml/kubernetes_Common.puml
+!includeurl KubernetesPuml/kubernetes_C4.puml
+!includeurl KubernetesPuml/kubernetes_Context.puml
+!includeurl KubernetesPuml/kubernetes_Simplified.puml
+
+!includeurl KubernetesPuml/OSS/KubernetesSvc.puml
+!includeurl KubernetesPuml/OSS/KubernetesIng.puml
+!includeurl KubernetesPuml/OSS/KubernetesPod.puml
+!includeurl KubernetesPuml/OSS/KubernetesDeploy.puml
+!includeurl KubernetesPuml/OSS/KubernetesApi.puml
+
+
+!define AzurePuml https://raw.githubusercontent.com/RicardoNiepel/Azure-PlantUML/release/2-1/dist
+!includeurl AzurePuml/AzureCommon.puml
+!includeurl AzurePuml/AzureSimplified.puml
+
+!includeurl AzurePuml/Containers/AzureContainerRegistry.puml
+
+top to bottom direction
+'Left to right direction
+
+skinparam ComponentStyle rectangle
+
+package "Dev Computer" {
+
+cloud "Function Code" {
+    [func.yaml]
+}
+[Fn CLI]
+[Docker Deamon]
+
+}
+
+' Kubernetes Components
+Cluster_Boundary(cluster, "Kubernetes Cluster") {
+    KubernetesIng(ingress, "api.mu.local", "")
+    Namespace_Boundary(nsFn, "mu-mgmt") {
+        KubernetesPod(api, "mu-api", "")
+        KubernetesPod(db, "mysql", "")
+    }
+    Rel(ingress, api, " ")
+    Rel(api, db, "store metadata")
+}
+
+AzureContainerRegistry(dockerregistry, "Docker Registry", " ")
+
+[func.yaml] --> [Fn CLI]
+[Fn CLI] -up-> ingress : fn metadata
+[Fn CLI] .down.> dockerregistry : image
+[Fn CLI] --> [Docker Deamon] : build:image
+@enduml
