@@ -19,7 +19,7 @@ There are multiple reasons you would consider your own on premise/cloud deployme
 
 - **Architecture freedom** - the main issue with any commercial offering is vendor lock in. With Mu, you are free to deploy the platform on-premise, on any cloud or even as part of your own stack. Freedom.
 - **Tight regulations** - should they be internal or external, regulations may force you to run your own instance. Here I am particularly thinking about government regulations such as the [CloudAct](https://en.wikipedia.org/wiki/CLOUD_Act) or the [NIL](https://en.wikipedia.org/wiki/National_Intelligence_Law_of_the_People%27s_Republic_of_China) and its impact on foreign operations/businesses.
-- **Region's Unavailability** - You may operate in a region of the world where there is no commercial availability, and your can't accept high service latencies. For the same reasons, support may not be available in your time zone forcing to run your own operational team.
+- **Capex vs Opex** - from a financial standpoint, your company prefers to make a capital investment rather than renting a service.
 - **OpenSource alignment** - Mu is opensource and tries to align with products in the same category. There are no intent to sell a commercial licensing.
 - **Caps limits** - commercial offerings are typically bounded to default limits. While those can be extended, it's a process and comes at a cost. You are in full control with Mu.
 - **Cost** - Commercial offering must be taken holistically, add the API Management, CIAM and storage, and you may realise that running your own ecosystem may be more cost-effective - your mileage may vary.
