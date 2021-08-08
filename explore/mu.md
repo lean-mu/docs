@@ -22,7 +22,7 @@ There are multiple reasons you would consider your own on premise/cloud deployme
 - **Capex vs Opex** - from a financial standpoint, your company prefers to make a capital investment rather than renting a service.
 - **OpenSource alignment** - Mu is opensource and tries to align with products in the same category. There are no intent to sell a commercial licensing.
 - **Caps limits** - commercial offerings are typically bounded to default limits. While those can be extended, it's a process and comes at a cost. You are in full control with Mu.
-- **Cost** - Commercial offering must be taken holistically, add the API Management, CIAM and storage, and you may realise that running your own ecosystem may be more cost-effective - your mileage may vary.
+- **Cost** - Commercial offering must be taken holistically, add an API Manager, a CIAM, storage & bandwidth - Your milage may vary, but you may realise that running your own ecosystem to be more cost-effective.
 - **Extensions** - Last but not least, the core of an opensource product can be extended by the community. commercial alternatives are not flexible in that matter.
 
 ## Why did we create Mu?
@@ -106,7 +106,9 @@ Mu provides 3 patterns to implement long running processes
 
 Mu would not be without Project Fn. In alignment with the other components of the suite - Mu is a distribution of Project Fn which provides a complete  solution to run a production serverless functions cluster.
 
-## Mu vs other OpenSource projects?
+## Mu vs other open source projects?
+
+I was suprise to see that most open source serverless alternativites either, do not provide functions out of the box, or are built around a CAAS (Container As A Service) architecture. Project Fn has a very unique wait of enableling docker which makes it a real FAAS platform. 
 
 ## Who created Mu?
 
