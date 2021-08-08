@@ -1,4 +1,4 @@
-# Fn Development with Multiple Contexts
+# Fn Development with Multiple CLI Contexts
 The Fn context stores configuration information about your functions, your Fn server and the location of your Docker images. You can configure multiple contexts for your function development. For example, let's do the following:
 
 * For local development, configure the Fn registry with an arbitrary value such as "fndemouser". This will save any docker images locally.
@@ -6,12 +6,11 @@ The Fn context stores configuration information about your functions, your Fn se
 
 ## Before you Begin
 
-* Set aside about 20 minutes to complete this tutorial.
 * Make sure the Fn server is up and running on your computer, see [Install Fn](../../install/README.md) for more details.
 * Have your Docker Hub credentials handy.
 * Have a second computer or virtual machine you can run Fn server on.
 
-## Configure your Default Context
+## Configure the Default Context
 First, set up your default context [as described in the install tutorial](https://github.com/fnproject/tutorials/blob/master/install/README.md#configure-your-context).
 
 To make sure your default Fn context is set correctly, list the contexts.

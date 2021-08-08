@@ -28,6 +28,9 @@ export default defineUserConfig<DefaultThemeOptions>({
         },
     },
     plugins: [
+      ['@vuepress/search', {
+      searchMaxSuggestions: 10
+    }],
         ['fulltext-search'],
         ['@vuepress/back-to-top'],
         ['@vuepress/medium-zoom'],
