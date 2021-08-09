@@ -1,4 +1,4 @@
-# Using the Fn RuntimeContext with Functions
+# Using the Fn Runtime Context with Functions
 
 In addition to the normal variables you use in function creation, Fn allows you to pass variable data, created by you, into your function.  This data, along with other automatically generated information, is converted into environment variables and made available to your function's runtime context. This tutorial covers how to set your own variables and use them in a function.
 

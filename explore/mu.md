@@ -106,6 +106,17 @@ Mu provides 3 patterns to implement long running processes
 
 Mu would not be without Project Fn. In alignment with the other components of the suite - Mu is a distribution of Project Fn which provides a complete  solution to run a production serverless functions cluster.
 
+Mu provides:
+
+* A formal distribution using Helm
+* The ability to discover runner nodes dynamically
+* Async processing (Coming soon)
+* Batch compute (Coming soon)
+* Centralized Logging
+* Centralized Observability
+* Centralized Distributed Tracing (Coming soon) 
+* Preconfigured dashboards & alerts
+
 ## Mu vs other open source projects?
 
 I was suprise to see that most open source serverless alternativites either, do not provide functions out of the box, or are built around a CAAS (Container As A Service) architecture. Project Fn has a very unique wait of enableling docker which makes it a real FAAS platform. 

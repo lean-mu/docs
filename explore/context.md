@@ -1,8 +1,16 @@
 # Fn Development with Multiple CLI Contexts
-The Fn context stores configuration information about your functions, your Fn server and the location of your Docker images. You can configure multiple contexts for your function development. For example, let's do the following:
+The CLI context stores configuration information about your functions, your Fn server and the location of your Docker images. You can configure multiple contexts for your function development. For example, let's do the following:
 
 * For local development, configure the Fn registry with an arbitrary value such as "fndemouser". This will save any docker images locally.
 * For cloud development, configure a new context to store images on Docker Hub and deploy functions to another server.
+
+
+::: Tip
+There are two types of contexts in Mu:
+
+* CLI contexts - is are a client side structure used to point and parametrize interactions with a Mu cluster
+* Runtime contexts - which are passed along a function's request and contain information about the runtime environment. Those run server side.
+:::
 
 ## Before you Begin
 
