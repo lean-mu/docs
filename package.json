@@ -5,6 +5,12 @@
     "dev": "vuepress dev",
     "build": "vuepress build . --clean-cache"
   },
+  "lint-staged": {
+    "*.{js,ts,vue}": "eslint --fix",
+    "*.{json,yml,css,scss}": "prettier --write",
+    "package.json": "sort-package-json"
+  },
+  "prettier": "prettier-config-vuepress",
   "devDependencies": {
     "@vue/component-compiler-utils": "^3.2.2",
     "@vuepress/plugin-back-to-top": "^1.8.2",

@@ -134,7 +134,7 @@ Extensions offer a way to enrich the core platform. There are basically 3 types 
 2. **Middleware** — which define a chain of middleware executed before the function (or API) invocation.
 3. **Control plane APIs** — which allow the extention of the default API with new endpoints.
 
-## FDK
+## Function Development Kits
 
 Function Development Kits (FDKs) are images bundling a set of helper libraries that handle the system internals automatically and make function development easier. Developers use FDKs to implement their own logic in one of the popular languages - Java, Node.js, Python, Go, and Ruby.
 
