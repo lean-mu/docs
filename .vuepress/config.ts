@@ -29,7 +29,7 @@ export default defineUserConfig<DefaultThemeOptions>({
     },
     plugins: [
         ['@vuepress/search', {searchMaxSuggestions: 10}],
-        ['fulltext-search'],
+        // ['fulltext-search'],      "vuepress-plugin-fulltext-search": "^2.2.1",
         ['@vuepress/back-to-top'],
         ['@vuepress/medium-zoom'],
         ['@vuepress/plugin-google-analytics', {id: "UA-124241826-1",}],
