@@ -57,7 +57,7 @@ module.exports = {
       },
     },
     {
-      files: ['docs/**'],
+      files: ['**'],
       rules: {
         'import/no-extraneous-dependencies': 'off',
       },

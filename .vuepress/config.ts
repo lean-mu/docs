@@ -18,6 +18,7 @@ export default defineUserConfig<DefaultThemeOptions>({
             description: 'Serverless functions in a box',
         },
     },
+    theme: path.resolve(__dirname, './theme'),
     markdown: {
         importCode: {
             handleImportPath: (str) =>
@@ -29,22 +30,34 @@ export default defineUserConfig<DefaultThemeOptions>({
     },
     plugins: [
         ['@vuepress/search', {searchMaxSuggestions: 10}],
+        ['@vuepress/plugin-search',
+          {
+            isSearchable: (page) => page.path !== '/',
+            locales: {
+              '/': {
+                placeholder: 'Search',
+              },
+              '/zh/': {
+                placeholder: '搜索',
+              },
+            },
+          }],
         // ['fulltext-search'],      "vuepress-plugin-fulltext-search": "^2.2.1",
         ['@vuepress/back-to-top'],
         ['@vuepress/medium-zoom'],
         ['@vuepress/plugin-google-analytics', {id: "UA-124241826-1",}],
         ['@vuepress/plugin-pwa'],
-        ['@vuepress/plugin-register-components',
-            {
-                componentsDir: path.resolve(__dirname, './components'),
-            }],
+        // ['@vuepress/plugin-register-components',
+        //     {
+        //         componentsDir: path.resolve(__dirname, './components'),
+        //     }],
         // only enable shiki plugin in production mode
-        [
-            '@vuepress/plugin-shiki',
-            {
-                theme: 'dark-plus',
-            }
-        ],
+        // [
+        //     '@vuepress/plugin-shiki',
+        //     {
+        //         theme: 'dark-plus',
+        //     }
+        // ],
     ],
 
     themeConfig: {

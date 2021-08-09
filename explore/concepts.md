@@ -104,13 +104,14 @@ The format follows the simple but powerfull crontab syntax as described below:
 `0 0 1 1 *` Happy new year schedule  
 `0 0 * * 1` Run at midnight on every Monday  
 
-#### Lists
+** Lists **
 
 `* 10,15,19 * * *` run at 10:00, 15:00 and 19:00  
 `1-15 * * * *` run at 1, 2, 3...15 minute of each hour  
 `0 0-5,10 * * *` run on every hour from 0-5 and in 10 oclock  
 
-#### Steps
+** Steps **
+
 `*/2 * * * *` run every two minutes  
 `10 */3 * * *` run every 3 hours on 10th min  
 `0 12 */2 * *` run at noon on every two days  
