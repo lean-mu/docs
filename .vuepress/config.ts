@@ -18,7 +18,7 @@ export default defineUserConfig<DefaultThemeOptions>({
             description: 'Serverless functions in a box',
         },
     },
-    theme: path.resolve(__dirname, './theme'),
+    // theme: path.resolve(__dirname, './theme'),
     markdown: {
         importCode: {
             handleImportPath: (str) =>
@@ -29,24 +29,28 @@ export default defineUserConfig<DefaultThemeOptions>({
         },
     },
     plugins: [
-        ['@vuepress/search', {searchMaxSuggestions: 10}],
-        ['@vuepress/plugin-search',
-          {
-            isSearchable: (page) => page.path !== '/',
-            locales: {
-              '/': {
-                placeholder: 'Search',
-              },
-              '/zh/': {
-                placeholder: '搜索',
-              },
-            },
-          }],
+        // ['@vuepress/search', {searchMaxSuggestions: 10}],
+        // ['@vuepress/plugin-search',
+        //   {
+        //     isSearchable: (page) => page.path !== '/',
+        //     locales: {
+        //       '/': {
+        //         placeholder: 'Search',
+        //       },
+        //       '/zh/': {
+        //         placeholder: '搜索',
+        //       },
+        //     },
+        //   }],
         // ['fulltext-search'],      "vuepress-plugin-fulltext-search": "^2.2.1",
-        ['@vuepress/back-to-top'],
-        ['@vuepress/medium-zoom'],
-        ['@vuepress/plugin-google-analytics', {id: "UA-124241826-1",}],
-        ['@vuepress/plugin-pwa'],
+        // ['@vuepress/theme-default'],
+        // ['@vuepress/back-to-top'],
+        ['@vuepress/medium-zoom', {
+            selector: 'img'
+        }],
+
+        // ['@vuepress/plugin-google-analytics', {id: "UA-124241826-1",}],
+        // ['@vuepress/plugin-pwa'],
         // ['@vuepress/plugin-register-components',
         //     {
         //         componentsDir: path.resolve(__dirname, './components'),
@@ -64,10 +68,10 @@ export default defineUserConfig<DefaultThemeOptions>({
         // extends: '@vuepress/theme-default',
         // layouts: path.resolve(__dirname, 'theme/layouts'),
         // fulltext-search plugin
-        searchMaxSuggestions: 10,
+        // searchMaxSuggestions: 10,
         logo: "/images/logo.svg",
         repo: 'lean-mu/mu-helm',
-        docsDir: "docs",
+        //docsDir: "docs",
 
         // theme-level locales config
         locales: {
