@@ -13,7 +13,9 @@
   "prettier": "prettier-config-vuepress",
   "devDependencies": {
     "@vue/component-compiler-utils": "^3.2.2",
-    "@vuepress/plugin-shiki": "^2.0.0-beta.5",
+    "@vuepress/plugin-google-analytics": "next",
+    "@vuepress/plugin-shiki": "next",
+    "@vuepress/plugin-search": "next",
     "eslint": "^7.32.0",
     "eslint-config-vuepress": "^3.2.1",
     "eslint-config-vuepress-typescript": "^2.2.1",
