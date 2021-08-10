@@ -3,7 +3,7 @@ import type { DefaultThemeOptions } from '@vuepress/theme-default'
 import { path } from '@vuepress/utils'
 import { navbar, sidebar } from './configs'
 
-const isProd = process.env.NODE_ENV === 'production'
+//const isProd = process.env.NODE_ENV === 'production'
 
 export default defineUserConfig<DefaultThemeOptions>({
   base: '/mu/documentation/',
@@ -18,7 +18,6 @@ export default defineUserConfig<DefaultThemeOptions>({
       description: 'Serverless functions in a box',
     },
   },
-  // theme: path.resolve(__dirname, './theme'),
   markdown: {
     importCode: {
       handleImportPath: (str) =>
@@ -67,7 +66,8 @@ export default defineUserConfig<DefaultThemeOptions>({
     // fulltext-search plugin
     // searchMaxSuggestions: 10,
     logo: '/images/logo.svg',
-    repo: 'lean-mu/mu-helm',
+    repo: 'lean-mu/docs',
+    docsBranch: 'master',
     //docsDir: "docs",
 
     // theme-level locales config
