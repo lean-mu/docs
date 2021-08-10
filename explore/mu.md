@@ -15,15 +15,16 @@ The symbol μ comes from the Greek μικρός (mikrós) and is commonly pronou
 
 ## Why do you need Mu?
 
-There are multiple reasons you would consider your own on premise/cloud deployment rather than a commercial alternative. For instance:
+There are multiple reasons you would consider your own on premise/cloud deployment rather than a commercial FAAS alternative. For instance:
 
-- **Architecture freedom** - the main issue with any commercial offering is vendor lock in. With Mu, you are free to deploy the platform on-premise, on any cloud or even as part of your own stack. Freedom.
-- **Tight regulations** - should they be internal or external, regulations may force you to run your own instance. Here I am particularly thinking about government regulations such as the [CloudAct](https://en.wikipedia.org/wiki/CLOUD_Act) or the [NIL](https://en.wikipedia.org/wiki/National_Intelligence_Law_of_the_People%27s_Republic_of_China) and its impact on foreign operations/businesses.
-- **Capex vs Opex** - from a financial standpoint, your company prefers to make a capital investment rather than renting a service.
-- **OpenSource alignment** - Mu is opensource and tries to align with products in the same category. There are no intent to sell a commercial licensing.
-- **Caps limits** - commercial offerings are typically bounded to default limits. While those can be extended, it's a process and comes at a cost. You are in full control with Mu.
+- **Architecture freedom** - The first concern with any commercial offering is vendor lock in. With Mu, you are free to deploy the platform on-premise, on any cloud or even as part of your own stack.
+- **Tight regulations** - Should they be internal or external, regulations may force you to run your own instance. Here I am particularly thinking about government regulations such as the [CloudAct](https://en.wikipedia.org/wiki/CLOUD_Act) or the [NIL](https://en.wikipedia.org/wiki/National_Intelligence_Law_of_the_People%27s_Republic_of_China) and their impacts on foreign business operations.
+- **Capex vs Opex** - From a financial standpoint, your company prefers to make a capital investment rather than renting a service.
+- **Open source alignment** - Mu is open source and tries to align with products in the same category. There are no intent to sell a commercial licensing.
+- **Dedicated resources** - Commercial functions offerings typically leverage a shared concurrency model which leads to throttled execution, slow interactions and frustrated users. With Mu you have full control about how the resources are shared.
+- **Caps limits** - Commercial offerings are typically bounded to default limits. It's not just memory or cpu; parameters like max concurrency limits have significative impacts on error rates. While those can be extended, it's a process and comes at a cost. 
 - **Cost** - Commercial offering must be taken holistically, add an API Manager, a CIAM, storage & bandwidth - Your milage may vary, but you may realise that running your own ecosystem to be more cost-effective.
-- **Extensions** - Last but not least, the core of an opensource product can be extended by the community. commercial alternatives are not flexible in that matter.
+- **Extensability** - Last but not least, the core of an open source product can be extended by the community. commercial alternatives are not flexible in that matter.
 
 ## Why did we create Mu?
 
