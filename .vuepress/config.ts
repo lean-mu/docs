@@ -3,8 +3,6 @@ import type { DefaultThemeOptions } from '@vuepress/theme-default'
 import { path } from '@vuepress/utils'
 import { navbar, sidebar } from './configs'
 
-//const isProd = process.env.NODE_ENV === 'production'
-
 export default defineUserConfig<DefaultThemeOptions>({
   base: '/mu/documentation/',
   port: 8080,
@@ -68,7 +66,6 @@ export default defineUserConfig<DefaultThemeOptions>({
     logo: '/images/logo.svg',
     repo: 'lean-mu/docs',
     docsBranch: 'master',
-    //docsDir: "docs",
 
     // theme-level locales config
     locales: {
