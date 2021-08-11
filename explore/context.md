@@ -1,22 +1,16 @@
-# Fn Development with Multiple CLI Contexts
-The CLI context stores configuration information about your functions, your Fn server and the location of your Docker images. You can configure multiple contexts for your function development. For example, let's do the following:
+# Understanding the CLI Contexts
+The CLI context stores configuration information about the runtime environment, your functions and the location of your Docker images. You can configure multiple contexts for your function development. For example, let's do the following:
 
-* For local development, configure the Fn registry with an arbitrary value such as "fndemouser". This will save any docker images locally.
-* For cloud development, configure a new context to store images on Docker Hub and deploy functions to another server.
-
-
-::: Tip
-There are two types of contexts in Mu:
-
-* CLI contexts - is are a client side structure used to point and parametrize interactions with a Mu cluster
-* Runtime contexts - which are passed along a function's request and contain information about the runtime environment. Those run server side.
+:::tip
+If you only use project's Fn for local development and testing, you can live without an image repository: configure the image registry with an arbitrary value such as "mylocalregistry". This will save any docker images locally.
 :::
 
-## Before you Begin
 
-* Make sure the Fn server is up and running on your computer, see [Install Fn](../../install/README.md) for more details.
-* Have your Docker Hub credentials handy.
-* Have a second computer or virtual machine you can run Fn server on.
+::: tip
+There are two types of contexts in Mu:
+* CLI contexts - which are a client side structure used to point and parametrize interactions with the Mu platform
+* Runtime contexts - which are more server side metadata passed along a function's request and which contain information about the invocation & environment.
+:::
 
 ## Configure the Default Context
 First, set up your default context [as described in the install tutorial](https://github.com/fnproject/tutorials/blob/master/install/README.md#configure-your-context).

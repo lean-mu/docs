@@ -1,7 +1,7 @@
 
 # Concepts
 
-Let's first introduce the basic Mu concepts:
+Let's first introduce the basic Mu concepts...
 
 ## Functions
 
@@ -134,6 +134,10 @@ Extensions offer a way to enrich the core platform. There are basically 3 types 
 1. **Listeners** — which listen to API lifecycle events such as a route update and allows to implement an action.
 2. **Middleware** — which define a chain of middleware executed before the function (or API) invocation.
 3. **Control plane APIs** — which allow the extention of the default API with new endpoints.
+
+## Image Registry
+
+The Image Registry is a Docker Registry used to store function's images. It is used at build time to store the output of the build (the function's image), and at runtime to pull a given version of an function prior to invocation.
 
 ## Function Development Kits
 

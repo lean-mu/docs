@@ -2,12 +2,15 @@
 
 ## Configuring the Fn Context
 
-Before we start using Fn, we need to configure it. Typically, two key attributes are required: first the API endpoint (provided above), second the function's docker registry.
+Before we start using Fn, two key configurations are required: the API endpoint and the function's registry.
 
-::: tip
-For simplicity, we will assume you registered an account on dockerhub under the username 'myregistry'. But you could also point to your own repository URL.
-When using a private repository, you will need to generate an access token and use it as follows (change key & username as required)
-echo TOKEN | docker login --username myregistry --password-stdin
+::: tip private registry
+For simplicity, we will assume you registered a public account on dockerhub under the username 'myregistry'. But you could also point to your own private repository URL.
+When using such setup, you will need to generate an access token from the registry provider, and use it as follows (change key & username as required)  
+`echo TOKEN | docker login --username myregistry --password-stdin`
+
+The configuration can also be setup within mu's `values.yaml` file.
+
 :::
 
 
@@ -27,12 +30,12 @@ Client version: X.X.XXX
 Server version: X.X.XXX
 ```
 
-The `Server version` is key - if it doesn't show a version nummber, you most likely have a connectivity issue.
+The `Server version` is key - if it doesn't show a version number, you most likely have a connectivity issue.
 
 
 ## Deploying your first function
 
-With Fn, functions can be written in a multitude of computer languages. In this quick start we will create a go function.
+With Mu, functions can be written in a multitude of computer languages. In this quick start we will create a go function.
 
 Functions are grouped by applications: let's create our first application.
 
@@ -83,7 +86,7 @@ At this point, you may have had an error - typically you will need to ensure pro
 With dockerhub, it's relatively simple. generate an access token and use it as follows (change key & username as required)
 echo TOKEN | docker login --username myregistry --password-stdin
 
-Next, let's invoke out function!
+Next, let's invoke our function!
 
 ```shell
 $ fn invoke first-app first-fn
@@ -119,20 +122,20 @@ Now let's invoke the same function via http this time:
 
 <CodeGroup>
 <CodeGroupItem title="Curl">
-  
+
 ```shell
 $ curl -X "POST" -H "Content-Type: application/json" -d '{"name":"Bob"}' http://localhost:8080/invoke/01F8FTRA5BNG8G00GZJ0000001
 {"message":"Hello Bob"}
 ```
-  
+
 </CodeGroupItem>
-  
+
 <CodeGroupItem title="Httpie" active>
-  
+
 ```shell
 $ http POST http://localhost:8080/invoke/01F8FTRA5BNG8G00GZJ0000001 name=Bob 
 {"message":"Hello Bob"}
 ```
-  
+
 </CodeGroupItem>
 </CodeGroup>

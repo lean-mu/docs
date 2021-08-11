@@ -40,18 +40,20 @@ If a function receives multiple calls while it is currently executing, the platf
 
 In mathematics, a **function** is a relation between a set of inputs, and a set of permissible outputs where the property that each input is related to exactly one output. functions are **simple**, **composable** and **reusable**.
 
-* **Ease of use** - Mu is easy to use & easy to program. It enables the developers to focus on the business logic 
-rather than the plumbing to enable the logic.  
-* **Flexibility** - From an implementation standpoint - Functions can be implemented in "any" languages. There is out
-of the box support for Java, JavaScript (Node), Go, Python and Ruby
+Functions are:
+
+* **An Agility Enabler** - Functions improve service loose coupling, the lower the coupling, the faster to iterate.
+* **Easy to use** - Mu is easy to use & easy to program. It enables the developers to focus on the business logic away from the typical operational complexities associated with this type of architecture.
+* **Pre-wired** - No need to worries about observability, tracing and logging. Mu functions are pre-wired with default operational dashboards.
+* **Flexible** - Functions can be implemented in "any" languages, with out of the box support for Java, JavaScript (Node), Go, Python and Ruby.
 
 ### Serverless Functions vs Microservices?
 
 Microservice defines an architecture which decompose large functional domains (otherwise called monolith) into small independent services (APIs). By reducing  the functional surface of the API, we implicitly recude the data it manages - making the service easier to replace and scale.
 
-However, the real complexity with micro-services doesn't lie in the functional split. Without proper precautions, the architecture becomes tedious to monitor, maintain and scale. RACE capabilities are particularly complex to implement and require dedicated experts.
+However, the real complexity with micro-services doesn't lie in the functional split. Without proper precautions, the architecture becomes tedious to monitor, maintain and operate. RACE capabilities are particularly complex to implement and require dedicated experts.
 
-With the introduction of Serverless functions, all the plumbing needed to provision, monitor, scale, patch and maintain the environment is provided by the platform itself. The developer focus on what matters most - business logic.
+With the introduction of Serverless functions, all the plumbing needed to provision, monitor, scale, patch and maintain the environment is provided by the platform itself: developers can focus on what matters most - business logic.
 
 ### Functions vs Containers
 
