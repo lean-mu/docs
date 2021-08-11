@@ -23,6 +23,7 @@ There are multiple reasons you would consider your own on premise/cloud deployme
 - **Open source alignment** - Mu is open source and tries to align with products in the same category. There are no intent to sell a commercial licensing.
 - **Dedicated resources** - Commercial functions offerings typically leverage a shared concurrency model which leads to throttled execution, slow interactions and frustrated users. With Mu you have full control about how the resources are shared.
 - **Caps limits** - Commercial offerings are typically bounded to default limits. It's not just memory or cpu; parameters like max concurrency limits have significative impacts on error rates. While those can be extended, it's a process and comes at a cost. 
+- **Security** - It is always safer to run software which can be audited end-to-end.
 - **Cost** - Commercial offering must be taken holistically, add an API Manager, a CIAM, storage & bandwidth - Your milage may vary, but you may realise that running your own ecosystem to be more cost-effective.
 - **Extensability** - Last but not least, the core of an open source product can be extended by the community. commercial alternatives are not flexible in that matter.
 
